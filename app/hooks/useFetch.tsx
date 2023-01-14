@@ -19,6 +19,7 @@ export default function useFetch(url: string, dependencies?: string) {
         setLoading("");
         setData(data);
         setError(null);
+        console.log(data)
       })
       .catch((err) => {
         setData(null);

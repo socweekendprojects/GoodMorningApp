@@ -12,10 +12,10 @@ const WeatherApp = () => {
   }
 
   const [weatherData, setWeatherData] = useState<WeatherDataType>();
-  const [lat, setLat] = useState(10);
-  const [lon, setLon] = useState(10);
+  const [lat, setLat] = useState(0);
+  const [lon, setLon] = useState(0);
 
-  const url = `http://api.openweathermap.org/data/2.5/weather/?lat=${lat}&lon=${lon}&units=metric&APPID=${process.env.NEXT_PUBLIC_API_KEY}`;
+  const url = `http://api.openweathermap.org/data/2.5/weather/?lat=${lat}&lon=${lon}&units=metric&APPID=${process.env.NEXT_PUBLIC_API_KEY2}`;
 
 
   useEffect(() => {
@@ -26,6 +26,7 @@ const WeatherApp = () => {
         let x = position.coords.longitude;
         console.log("hello");
         console.log("long", x);
+        console.log(url)
       });
     };
 
