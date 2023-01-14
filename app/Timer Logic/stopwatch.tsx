@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import "./StopWatch.css";
+// import "./StopWatch.css";
 import Timer from "./timer";
 import ControlButtons from "./controlButtons";
-  
+
 function StopWatch() {
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(true);
   const [time, setTime] = useState(0);
-  
+
   React.useEffect(() => {
-    let interval = null;
-  
+    let interval: ReturnType<typeof setInterval> | undefined;
+
     if (isActive && isPaused === false) {
       interval = setInterval(() => {
         setTime((time) => time + 10);
@@ -22,21 +22,21 @@ function StopWatch() {
       clearInterval(interval);
     };
   }, [isActive, isPaused]);
-  
+
   const handleStart = () => {
     setIsActive(true);
     setIsPaused(false);
   };
-  
+
   const handlePauseResume = () => {
     setIsPaused(!isPaused);
   };
-  
+
   const handleReset = () => {
     setIsActive(false);
     setTime(0);
   };
-  
+
   return (
     <div className="stop-watch">
       <Timer time={time} />
@@ -50,5 +50,5 @@ function StopWatch() {
     </div>
   );
 }
-  
+
 export default StopWatch;

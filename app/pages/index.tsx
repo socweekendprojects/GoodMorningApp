@@ -3,6 +3,9 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 import WeatherApp from "../components/WeatherApp";
+import Timer from "../Timer Logic/timer";
+import StopWatch from "../Timer Logic/stopwatch";
+import TimerLogicV2 from '../components/TimerLogicV2/index'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="w-[100vw] h-[100vh] bg-light-primary">
-        <WeatherApp />
+        {/* <WeatherApp /> */}
+        {/* <StopWatch></StopWatch> */}
+        <TimerLogicV2></TimerLogicV2>
       </main>
     </>
   );

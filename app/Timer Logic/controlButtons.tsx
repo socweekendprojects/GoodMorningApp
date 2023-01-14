@@ -1,5 +1,4 @@
 import React from "react";
-import "./ControlButtons.css";
 
 type ControlButtonsProps = {
     handleStart: (event: React.MouseEvent<HTMLElement>) => void;
